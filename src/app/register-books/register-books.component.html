@@ -1,1 +1,40 @@
-<p>register-books works!</p>
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">Book Registration</h1>
+    
+    <form id="bookRegistrationForm">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="author" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <input type="text" class="form-control" id="genre" name="genre" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="publicationDate" class="form-label">Publication Date</label>
+            <input type="date" class="form-control" id="publicationDate" name="publicationDate" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="publisher" class="form-label">Publisher</label>
+            <input type="text" class="form-control" id="publisher" name="publisher" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="collection" class="form-label">Collection</label>
+            <input type="text" class="form-control" id="collection" name="collection">
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Register Book</button>
+        </div>
+    </form>
+</div>

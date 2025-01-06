@@ -1,1 +1,67 @@
-<p>consult-books works!</p>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Book Query</h1>
+
+    <form id="bookQueryForm" class="mb-4">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title">
+            </div>
+
+            <div class="col-md-4">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" name="author" placeholder="Enter author name">
+            </div>
+
+            <div class="col-md-4">
+                <label for="genre" class="form-label">Genre</label>
+                <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter genre">
+            </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+            <div class="col-md-4">
+                <label for="publicationDate" class="form-label">Publication Date</label>
+                <input type="date" class="form-control" id="publicationDate" name="publicationDate">
+            </div>
+
+            <div class="col-md-4">
+                <label for="publisher" class="form-label">Publisher</label>
+                <input type="text" class="form-control" id="publisher" name="publisher"
+                    placeholder="Enter publisher name">
+            </div>
+
+            <div class="col-md-4">
+                <label for="collection" class="form-label">Collection</label>
+                <input type="text" class="form-control" id="collection" name="collection"
+                    placeholder="Enter collection">
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    <div id="results">
+        <h2 class="text-center">Search Results</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Publication Date</th>
+                    <th>Publisher</th>
+                    <th>Collection</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody">
+                <tr>
+                    <td colspan="7" class="text-center">No results found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
