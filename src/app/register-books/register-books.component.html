@@ -1,40 +1,40 @@
 <div class="container mt-5">
 
     <h1 class="text-center mb-4">Book Registration</h1>
-    
-    <form [formGroup] = "formulario" (ngSubmit)="registerBook()">
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" formControlName="title" required>
+
+    <form [formGroup]="formulario" (ngSubmit)="registerBook()">
+
+        <div class="form-group">
+            <label for="title">Title: </label>
+            <input id="title" type="text" formControlName="title" class="form-control" />
         </div>
 
-        <div class="mb-3">
-            <label for="author" class="form-label">Author</label>
-            <input type="text" class="form-control" formControlName="author" required>
+        <div class="form-group">
+            <label for="author">Author: </label>
+            <input id="author" type="text" formControlName="author" class="form-control" />
         </div>
 
-        <div class="mb-3">
-            <label for="genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" formControlName="genre" required>
+        <div class="form-group">
+            <label for="genre">Genre: </label>
+            <input id="genre" type="text" formControlName="genre" class="form-control" />
         </div>
 
-        <div class="mb-3">
-            <label for="publicationDate" class="form-label">Publication Date</label>
-            <input type="date" class="form-control" formControlName="publicationDate" required>
+        <div class="form-group">
+            <label for="publicationDate">Publication Date: </label>
+            <input id="publicationDate" type="date" formControlName="publicationDate" class="form-control" />
         </div>
 
-        <div class="mb-3">
-            <label for="publisher" class="form-label">Publisher</label>
-            <input type="text" class="form-control" formControlName="publisher" required>
+        <div class="form-group">
+            <label for="publisher">Publisher: </label>
+            <input id="publisher" type="text" formControlName="publisher" class="form-control" />
         </div>
 
-        <div class="mb-3">
-            <label for="collection" class="form-label">Collection</label>
-            <input type="text" class="form-control" formControlName="collection">
+        <div class="form-group">
+            <label for="collection">Collection: </label>
+            <input id="collection" type="text" formControlName="collection" class="form-control" />
         </div>
 
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Register Book</button>
-        </div>
+        <button type="submit" class="btn btn-primary mt-3">Register Book</button>
     </form>
+
 </div>
