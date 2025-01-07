@@ -2,6 +2,14 @@
 
     <h1 class="text-center mb-4">Book Registration</h1>
 
+    <div *ngIf="message === 'Livro registrado com sucesso!'" class="alert alert-primary">
+        <strong>{{ message }}</strong>
+    </div>
+
+    <div *ngIf="message.startsWith('Erro')" class="alert alert-danger">
+        <strong>{{ message }}</strong>
+    </div>
+
     <form [formGroup]="formulario" (ngSubmit)="registerBook()">
 
         <div class="form-group">

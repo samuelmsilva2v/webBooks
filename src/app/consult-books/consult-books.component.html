@@ -1,67 +1,64 @@
 <div class="container mt-5">
-    <h1 class="text-center mb-4">Book Query</h1>
 
-    <form id="bookQueryForm" class="mb-4">
-        <div class="row g-3">
-            <div class="col-md-4">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title">
-            </div>
+    <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold">Books List</h1>
+        <p class="text-muted">Browse through the collection of books in the system</p>
+    </div>
 
-            <div class="col-md-4">
-                <label for="author" class="form-label">Author</label>
-                <input type="text" class="form-control" id="author" name="author" placeholder="Enter author name">
-            </div>
+    <pagination-controls previousLabel="Previous" nextLabel="Next" (pageChange)="handlePageChange($event)" />
 
-            <div class="col-md-4">
-                <label for="genre" class="form-label">Genre</label>
-                <input type="text" class="form-control" id="genre" name="genre" placeholder="Enter genre">
-            </div>
-        </div>
 
-        <div class="row g-3 mt-3">
-            <div class="col-md-4">
-                <label for="publicationDate" class="form-label">Publication Date</label>
-                <input type="date" class="form-control" id="publicationDate" name="publicationDate">
-            </div>
-
-            <div class="col-md-4">
-                <label for="publisher" class="form-label">Publisher</label>
-                <input type="text" class="form-control" id="publisher" name="publisher"
-                    placeholder="Enter publisher name">
-            </div>
-
-            <div class="col-md-4">
-                <label for="collection" class="form-label">Collection</label>
-                <input type="text" class="form-control" id="collection" name="collection"
-                    placeholder="Enter collection">
-            </div>
-        </div>
-
-        <div class="text-center mt-4">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-    </form>
-
-    <div id="results">
-        <h2 class="text-center">Search Results</h2>
-        <table class="table table-striped">
-            <thead>
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-hover align-middle">
+            <thead class="table-primary">
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Genre</th>
-                    <th>Publication Date</th>
-                    <th>Publisher</th>
-                    <th>Collection</th>
-                    <th>Actions</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Publication Date</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Collection</th>
+                    <th scope="col" class="text-center">Actions</th>
                 </tr>
             </thead>
-            <tbody id="resultsTableBody">
-                <tr>
-                    <td colspan="7" class="text-center">No results found.</td>
+            <tbody>
+
+                <tr *ngFor="let book of books | paginate : { itemsPerPage : 10, 
+                    currentPage : paginator }">
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.genre }}</td>
+                    <td>{{ book.publicationDate }}</td>
+                    <td>{{ book.publisher }}</td>
+                    <td>{{ book.collection }}</td>
+                    <td class="text-center">
+                        <button class="btn btn-warning btn-sm mx-1">
+                            <i class="bi bi-pencil-fill"></i> Edit
+                        </button>
+                        <button class="btn btn-danger btn-sm mx-1">
+                            <i class="bi bi-trash-fill"></i> Delete
+                        </button>
+                    </td>
+                </tr>
+                <!-- Empty State -->
+                <tr *ngIf="books.length === 0">
+                    <td colspan="7" class="text-center text-muted py-4">
+                        <i class="bi bi-exclamation-circle"></i> No books found.
+                    </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+
+    <div class="text-end mt-3">
+        <span class="fs-5">
+            Total Books: {{ books.length }}
+        </span>
+    </div>
+
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
     </div>
 </div>
