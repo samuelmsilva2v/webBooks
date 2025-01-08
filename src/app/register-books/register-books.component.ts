@@ -36,9 +36,9 @@ export class RegisterBooksComponent {
     formData.publicationDate = this.datePipe.transform(formData.publicationDate, 'dd/MM/yyyy');
 
     this.httpClient.post('http://localhost:8080/api/books', formData, { responseType: 'text' }).subscribe({
-      next: () => {  // Ignore o conteúdo da resposta, já que não precisamos usá-lo
-        this.message = 'Livro registrado com sucesso!'; // Define a mensagem de sucesso
-        this.formulario.reset(); // Reseta o formulário após o sucesso
+      next: () => { 
+        this.message = 'Livro registrado com sucesso!';
+        this.formulario.reset();
       },
       error: (error) => {
         console.error('Erro ao registrar livro:', error);

@@ -1,1 +1,65 @@
-<p>edit-books works!</p>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold text-primary">Edit Book</h1>
+        <p class="text-muted">Update the details of the selected book</p>
+    </div>
+
+    <form [formGroup]="bookForm" (ngSubmit)="updateBook()">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" class="form-control" formControlName="title"
+                    [ngClass]="{ 'is-invalid': bookForm.get('title')?.invalid && bookForm.get('title')?.touched }" />
+                <div class="invalid-feedback">Title is required.</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" id="author" class="form-control" formControlName="author"
+                    [ngClass]="{ 'is-invalid': bookForm.get('author')?.invalid && bookForm.get('author')?.touched }" />
+                <div class="invalid-feedback">Author is required.</div>
+            </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+            <div class="col-md-6">
+                <label for="genre" class="form-label">Genre</label>
+                <input type="text" id="genre" class="form-control" formControlName="genre"
+                    [ngClass]="{ 'is-invalid': bookForm.get('genre')?.invalid && bookForm.get('genre')?.touched }" />
+                <div class="invalid-feedback">Genre is required.</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="publicationDate" class="form-label">Publication Date</label>
+                <input type="date" id="publicationDate" class="form-control" formControlName="publicationDate"
+                    [ngClass]="{ 'is-invalid': bookForm.get('publicationDate')?.invalid && bookForm.get('publicationDate')?.touched }" />
+                <div class="invalid-feedback">Publication Date is required.</div>
+            </div>
+        </div>
+
+        <div class="row g-3 mt-3">
+            <div class="col-md-6">
+                <label for="publisher" class="form-label">Publisher</label>
+                <input type="text" id="publisher" class="form-control" formControlName="publisher"
+                    [ngClass]="{ 'is-invalid': bookForm.get('publisher')?.invalid && bookForm.get('publisher')?.touched }" />
+                <div class="invalid-feedback">Publisher is required.</div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="collection" class="form-label">Collection</label>
+                <input type="text" id="collection" class="form-control" formControlName="collection" />
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success" [disabled]="bookForm.invalid" (click)="updateBook()">
+                <i class="bi bi-save"></i> Update Book
+            </button>
+        </div>
+    </form>
+
+    <div *ngIf="message" class="alert mt-4"
+        [ngClass]="{ 'alert-success': message.includes('sucesso'), 'alert-danger': !message.includes('sucesso') }">
+        {{ message }}
+    </div>
+</div>

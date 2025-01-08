@@ -1,12 +1,10 @@
 <div class="container mt-5">
-
     <div class="text-center mb-4">
         <h1 class="display-5 fw-bold">Books List</h1>
         <p class="text-muted">Browse through the collection of books in the system</p>
     </div>
 
     <pagination-controls previousLabel="Previous" nextLabel="Next" (pageChange)="handlePageChange($event)" />
-
 
     <div class="table-responsive shadow-sm rounded">
         <table class="table table-hover align-middle">
@@ -32,7 +30,7 @@
                     <td>{{ book.publisher }}</td>
                     <td>{{ book.collection }}</td>
                     <td class="text-center">
-                        <button class="btn btn-warning btn-sm mx-1">
+                        <button class="btn btn-warning btn-sm mx-1" (click)="navigateToEdit(book.id)">
                             <i class="bi bi-pencil-fill"></i> Edit
                         </button>
                         <button class="btn btn-danger btn-sm mx-1" (click)="deleteBook(book.id)">
@@ -40,7 +38,7 @@
                         </button>
                     </td>
                 </tr>
-                <!-- Empty State -->
+
                 <tr *ngIf="books.length === 0">
                     <td colspan="7" class="text-center text-muted py-4">
                         <i class="bi bi-exclamation-circle"></i> No books found.
@@ -50,13 +48,11 @@
         </table>
     </div>
 
-
     <div class="text-end mt-3">
         <span class="fs-5">
             Total Books: {{ books.length }}
         </span>
     </div>
-
 
     <div *ngIf="errorMessage" class="alert alert-danger mt-3">
         {{ errorMessage }}

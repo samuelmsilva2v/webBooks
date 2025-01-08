@@ -13,7 +13,12 @@ export const routes: Routes = [
         component: ConsultBooksComponent
     },
     {
-        path: 'app/edit-books',
+        path: 'app/edit-books/:id',
         component: EditBooksComponent
+    },
+    {
+        path: '', pathMatch: 'full',
+        redirectTo: '/app/consult-books'
     }
+
 ];

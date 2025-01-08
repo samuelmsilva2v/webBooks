@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-consult-books',
@@ -18,7 +19,7 @@ export class ConsultBooksComponent implements OnInit {
   errorMessage: string = '';
   paginator: number = 1;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.fetchBooks();
@@ -38,6 +39,9 @@ export class ConsultBooksComponent implements OnInit {
   }
 }
 
+navigateToEdit(bookId: string): void {
+  this.router.navigate(['/app/edit-books', bookId]);
+}
 
 handlePageChange(event: any) {
   this.paginator = event;
