@@ -1,27 +1,71 @@
-# WebBooks
+# Web Books
+[🇺🇸 Read in English](#books-web)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+Este é um front-end construído com Angular para gerenciar livros fornecendo uma interface para interagir com a API REST [booksApi](https://github.com/samuelmsilva2v/booksApi).
 
-## Development server
+## Pré-requisitos
+- Node.js e npm instalados: [Node.js](https://nodejs.org/)
+- Angular CLI instalado globalmente:
+```bash
+  npm install -g @angular/cli
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias
+* Angular
+* Bootstrap
 
-## Code scaffolding
+## Instalação
+1. Clone o repositório
+```bash
+git clone https://github.com/samuelmsilva2v/webBooks.git
+cd webBooks
+```
+2. Instale as dependências
+```bash
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades
+* Cadastro, consulta, edição e exclusão de livros.
 
-## Build
+## Imagens da aplicação
+![Register a book](https://github.com/samuelmsilva2v/assets/blob/main/webBooks/Captura%20de%20tela%202025-01-11%20170527.png)
+![Consult books](https://github.com/samuelmsilva2v/assets/blob/main/webBooks/Captura%20de%20tela%202025-01-11%20170902.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+# Books Web
+[🇧🇷 Leia em Português](#web-books)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This is a front-end built with Angular for managing books, providing an interface to interact with the REST API [booksApi](https://github.com/samuelmsilva2v/booksApi).
 
-## Running end-to-end tests
+## Prerequisites
+Node.js and npm installed: Node.js
+Angular CLI installed globally:
+```bash
+  npm install -g @angular/cli
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Technologies
+* Angular
+* Bootstrap
 
-## Further help
+## Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clone the repository:
+```bash
+git clone https://github.com/samuelmsilva2v/webBooks.git
+cd webBooks
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+## Features
+* Registration, consultation, editing and deletion of books
+
+## Application images
+![Register a book](https://github.com/samuelmsilva2v/assets/blob/main/webBooks/Captura%20de%20tela%202025-01-11%20170527.png)
+![Consult books](https://github.com/samuelmsilva2v/assets/blob/main/webBooks/Captura%20de%20tela%202025-01-11%20170902.png)
